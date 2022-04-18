@@ -8,6 +8,6 @@ import (
 
 func DeleteUser(id uuid.UUID) error {
 	return DB.Model(&domain.User{}).Where(&domain.User{Id: id}).
-		Update("status", domain.Active).
+		Update("status", domain.Delete).
 		Update("deleted_at", time.Now()).Error
 }

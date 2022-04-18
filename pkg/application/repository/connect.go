@@ -7,8 +7,7 @@ import (
 
 var DB *gorm.DB
 
-func Connect() error {
-	dsn := "host=localhost user=user password=password dbname=AuthDB port=5430 sslmode=disable"
+func Connect(dsn string) error {
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return err
